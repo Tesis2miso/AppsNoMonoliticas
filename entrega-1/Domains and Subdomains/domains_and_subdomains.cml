@@ -1,0 +1,76 @@
+ContextMap InsuranceContextMap {
+	type = SYSTEM_LANDSCAPE
+	state = AS_IS
+}
+
+/* Domain & Subdomain Definitions */
+Domain StorageDomain {
+	Subdomain InventoryManagement {
+		type = SUPPORTING_DOMAIN
+		domainVisionStatement = "Subdomain para hacer identificación y localización de inventario al igual que manejo de stock."
+	}
+
+	Subdomain PackageInbound {
+		type = CORE_DOMAIN
+		domainVisionStatement = "Subdomain para hacer manejo de abastecimiento, adquisición, recibimiento, procesamiento de retornos y balance oferta/demanda."
+	}
+
+	Subdomain PackageOutbound {
+		type = GENERIC_SUBDOMAIN
+		domainVisionStatement = "Subdomain para hacer manejo de integración con logistica, despacho de inventario y empaquetado."
+	}
+
+	Subdomain ExpirationMonitoring {
+		type = SUPPORTING_DOMAIN
+		domainVisionStatement = "Subdomain para gestionar la trazabilidad de las fechas de caducidad."
+	}
+
+	Subdomain Warehouses {
+		type = SUPPORTING_DOMAIN
+		domainVisionStatement = "Subdomain para gestionar la ubicación y costos de mantenimiento de las bodegas."
+	}
+}
+
+Domain LogisticsDomain {
+	Subdomain DistributionCenters {
+		type = SUPPORTING_DOMAIN
+		domainVisionStatement = "Subdomain para gestionar la ubicación de los centros de distribución."
+	}
+
+	Subdomain CouriersManagement {
+		type = SUPPORTING_DOMAIN
+		domainVisionStatement = "Subdomain para la integración con couriers in-house y terceros utilizados para la entrega de inventario."
+	}
+}
+
+Domain DeliveryDomain {
+	Subdomain RoutePlanner {
+		type = CORE_DOMAIN
+		domainVisionStatement = "Subdomain para planeación y optimización de las rutas en terminos de costo, tiempo y capacidad vehicular."
+	}
+
+	Subdomain Tracking {
+		type = CORE_DOMAIN
+		domainVisionStatement = "Subdomain para el seguimiento de las entregas en proceso en tiempo real garantizando la seguridad de cada trayecto."
+	}
+
+	Subdomain Drivers {
+		type = SUPPORTING_DOMAIN
+		domainVisionStatement = "Subdomain para manejo de ubicación y asignación de pedidos a conductores."
+	}
+
+	Subdomain Vehicles {
+		type = SUPPORTING_DOMAIN
+		domainVisionStatement = "Subdomain para manejo de capacidad y disponibilidad de vehiculos."
+	}
+
+	Subdomain DeliveryManagement {
+		type = SUPPORTING_DOMAIN
+		domainVisionStatement = "Subdomain para manejar el estado de paquetes y su entrega (Entregado, Recibido, Devuelto)."
+	}
+
+	Subdomain AddressesProvider {
+		type = GENERIC_SUBDOMAIN
+		domainVisionStatement = "Subdomain para la integración con sistemas de localización direcciones, definición de poligonos y areas de localización."
+	}
+}
