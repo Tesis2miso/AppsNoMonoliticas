@@ -1,0 +1,112 @@
+
+
+ContextMap ContextMapper {
+	contains Integraciones, TrackingPedidos, PlaneacionEntrega, FacilitacionPedidos, Ejecucion,Despacho, Empaquetado, Logistica, CadenaSuministros , Entregas, Inbound, ManejoStock, Outbound, Adquisicion, Recibimiento, AnalisisOfertaDemanda
+	
+	Entregas -> CadenaSuministros
+
+	Entregas -> Logistica
+
+	CadenaSuministros -> Inbound
+
+	CadenaSuministros -> ManejoStock
+
+	CadenaSuministros -> Outbound
+
+	Inbound -> Adquisicion
+
+	Inbound -> Recibimiento
+
+	Inbound -> AnalisisOfertaDemanda
+
+	Outbound -> Empaquetado
+
+	Outbound -> Despacho
+
+	Logistica -> Ejecucion
+
+	Logistica -> FacilitacionPedidos
+
+	Logistica -> Despacho
+
+	Logistica -> PlaneacionEntrega
+
+	Logistica -> TrackingPedidos
+
+	Logistica -> Integraciones
+}
+
+BoundedContext Integraciones {
+    domainVisionStatement = "Prestación de servicio"
+    responsibilities = "Integrarse con servicios externos a los de la empresa."
+}
+
+BoundedContext TrackingPedidos {
+    domainVisionStatement = "Monitoreo de envios"
+    responsibilities = "Seguir geograficamente un pedido realizado por un cliente."
+}
+
+BoundedContext PlaneacionEntrega {
+    domainVisionStatement = "Organización de las ordenes"
+    responsibilities = "Ordenar por zona los pedidos con el fin de manejar menos transportes por dia."
+}
+
+BoundedContext FacilitacionPedidos {
+    domainVisionStatement = "Facilitar la gestión de una orden"
+    responsibilities = "Gestionar la planeación y despacho de pedidos."
+}
+
+BoundedContext Ejecucion {
+    domainVisionStatement = "Puesta en marcha de la estrategia de envios para el negocio."
+    responsibilities = "Implementación del tracking y administración de ultima milla."
+}
+
+BoundedContext Entregas {
+    domainVisionStatement = "Dominio principal de la cadena de sumistro."
+}
+
+BoundedContext CadenaSuministros {
+    domainVisionStatement = "Jerarquia de productos."
+}
+
+BoundedContext Inbound {
+    domainVisionStatement = "Gestión interna de bodegaje y adquisición de los proveedores."
+}
+
+BoundedContext Logistica {
+    domainVisionStatement = "Planeación de la logica de envios."
+}
+
+BoundedContext ManejoStock {
+    domainVisionStatement = "Facilitar la gestión de una orden"
+}
+
+BoundedContext Outbound {
+    domainVisionStatement = "Gestión externa a las instalaciones de la empresa para garantizar la entrega del pedido."
+}
+
+BoundedContext Adquisicion {
+    domainVisionStatement = "Facilitar la gestión de una orden"
+    responsibilities = "Gestionar la planeación y despacho de pedidos."
+}
+
+BoundedContext Recibimiento {
+    domainVisionStatement = "Recibimiento de un proovedor para almacenar el producto en bodegas."
+}
+
+BoundedContext AnalisisOfertaDemanda {
+    domainVisionStatement = "Facilitar la gestión de una orden"
+    responsibilities = "Gestionar la planeación y despacho de pedidos."
+}
+
+BoundedContext Empaquetado {
+    domainVisionStatement = "Envolultura apropiada para las necesidades de cada producto."
+}
+
+BoundedContext Despacho {
+    domainVisionStatement = "Envio de productos a las direcciones propuestas."
+}
+
+
+
+
